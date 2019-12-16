@@ -1,0 +1,20 @@
+{
+  "name": "sqs-dynamodb-orchestrator-lambda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cjww-development/sqs-dynamodb-orchestrator-lambda.git"
+  },
+  "keywords": [],
+  "author": "CJWW Development",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cjww-development/sqs-dynamodb-orchestrator-lambda/issues"
+  },
+  "homepage": "https://github.com/cjww-development/sqs-dynamodb-orchestrator-lambda#readme"
+}
