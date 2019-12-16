@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/cjww-development/sqs-dynamodb-orchestrator-lambda/issues"
   },
-  "homepage": "https://github.com/cjww-development/sqs-dynamodb-orchestrator-lambda#readme"
+  "homepage": "https://github.com/cjww-development/sqs-dynamodb-orchestrator-lambda#readme",
+  "devDependencies": {
+    "uuid": "^3.3.3"
+  }
 }
