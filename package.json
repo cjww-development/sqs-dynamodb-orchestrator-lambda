@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "nodemon ./start.js",
+    "test": "mocha --recursive"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,11 @@
   },
   "homepage": "https://github.com/cjww-development/sqs-dynamodb-orchestrator-lambda#readme",
   "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
     "uuid": "^3.3.3"
   }
 }
