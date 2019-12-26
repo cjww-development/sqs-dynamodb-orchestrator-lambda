@@ -1,0 +1,28 @@
+name: Deploy to AWS Lambda
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v1
+
+      - name: Configure aws cli
+        run: |
+          aws configure set output json
+          aws configure set region eu-west-2
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Deploy lambda
+        run: |
+          npm install --verbose
+          aws s3 sync s3://homely-secrets .
+          zip -r sqs-firestore-orchestrator-lambda.zip sqs-firestore-orchestrator-lambda
+          aws lambda update-function-code --function-name sqs-firestore-orchestrator-lambda --zip-file fileb://sqs-firestore-orchestrator-lambda.zip --region eu-west-2
