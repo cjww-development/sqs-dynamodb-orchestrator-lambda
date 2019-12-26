@@ -16,3 +16,5 @@ server.pid
 .cache
 node-modules/
 .idea
+
+service-account.json
