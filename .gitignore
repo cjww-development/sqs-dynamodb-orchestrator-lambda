@@ -14,7 +14,7 @@ server.pid
 *.eml
 /dist/
 .cache
-node-modules/
+node_modules/
 .idea
 
 service-account.json
