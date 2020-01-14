@@ -14,11 +14,18 @@
  * limitations under the License.
  */
 
-const chai = require('chai');
-const expect = chai.expect;
+const isEquivalent = (a, b) => {
+    const aProps = Object.getOwnPropertyNames(a);
+    const bProps = Object.getOwnPropertyNames(b);
 
-describe('Really dumb test️', () => {
-    it('should pass', () => {
-        expect(1).to.equal(1);
-    });
-});
+    if(aProps.length !== bProps.length) { return false }
+    for (let i = 0; i < aProps.length; i++) {
+        let propName = aProps[i];
+        if (a[propName] !== b[propName]) {
+            return false;
+        }
+    }
+    return true;
+};
+
+exports.isEquivalent = isEquivalent;

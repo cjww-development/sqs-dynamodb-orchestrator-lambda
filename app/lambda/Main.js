@@ -14,8 +14,13 @@
  * limitations under the License.
  */
 
-const lambda = require("./app/lambda/Main");
+const repos = require("../database/DatabaseRepositories");
 
-exports.handler = async (event) => {
-    return lambda.invoke(event);
+exports.invoke = async (event) => {
+    return repos.envData.read("env-data-10d420b6-ce02-4efd-b727-72c055105c3f").then(data => {
+        return {
+            statusCode: 200,
+            body: data
+        }
+    });
 };

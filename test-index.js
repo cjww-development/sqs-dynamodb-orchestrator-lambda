@@ -16,6 +16,6 @@
 
 const lambda = require("./app/lambda/Main");
 
-exports.handler = async (event) => {
-    return lambda.invoke(event);
-};
+return lambda.invoke({test: 123}).then(res => {
+    console.log(res)
+});

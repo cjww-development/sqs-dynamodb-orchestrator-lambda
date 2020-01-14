@@ -14,8 +14,5 @@
  * limitations under the License.
  */
 
-const lambda = require("./app/lambda/Main");
-
-exports.handler = async (event) => {
-    return lambda.invoke(event);
-};
+const FireStoreRepo = require("./FirestoreRepo");
+module.exports.envData = new FireStoreRepo("environment-data");
